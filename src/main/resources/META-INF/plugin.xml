@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin>
+    <id>cc.oofo.easy-translate</id>
+    <name>翻译助手</name>
+    <vendor email="dev@oofo.cc" url="https://www.oofo.cc">Yuxuan</vendor>
+
+    <description><![CDATA[
+    一个简单易用的翻译插件，支持中英互译。
+    
+    功能特点：
+    - 选中文本后按快捷键（默认 Alt + T）即可翻译
+    - 自动检测中英文并进行互译
+    - 支持自定义快捷键
+    - 支持多个翻译引擎（百度、有道、谷歌）
+    - 支持自定义翻译词典
+    ]]></description>
+
+    <!-- Product and plugin compatibility requirements -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin -->
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Settings -->
+        <projectService serviceImplementation="cc.oofo.easytranslate.settings.TranslateSettingsState"/>
+        <projectService serviceImplementation="cc.oofo.easytranslate.services.TranslationService"/>
+        <projectService serviceImplementation="cc.oofo.easytranslate.dictionary.DictionaryService"/>
+        <projectConfigurable
+                parentId="tools"
+                instance="cc.oofo.easytranslate.settings.TranslateSettingsConfigurable"
+                id="cc.oofo.easytranslate.settings.TranslateSettingsConfigurable"
+                displayName="翻译助手"/>
+    </extensions>
+
+    <!-- Actions defined by the plugin -->
+    <actions>
+        <action id="cc.oofo.easytranslate.actions.QuickTranslateAction"
+                class="cc.oofo.easytranslate.actions.QuickTranslateAction"
+                text="快速翻译"
+                description="快速翻译选中的文本（中英互译）">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt T"/>
+        </action>
+
+        <action id="cc.oofo.easytranslate.actions.TextTransformAction"
+                class="cc.oofo.easytranslate.actions.TextTransformAction"
+                text="文本转换"
+                description="转换文本格式（大写、小写、驼峰、下划线）">
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="cc.oofo.easytranslate.actions.QuickTranslateAction"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt shift T"/>
+        </action>
+    </actions>
+</idea-plugin> 
