@@ -13,6 +13,8 @@
     - 支持自定义快捷键
     - 支持多个翻译引擎（百度、有道、谷歌）
     - 支持自定义翻译词典
+    - 支持中文变量命名建议（Alt + Shift + V）
+    - 支持多种文本转换功能（Alt + Shift + T）
     ]]></description>
 
     <!-- Product and plugin compatibility requirements -->
@@ -47,6 +49,14 @@
                 description="转换文本格式（大写、小写、驼峰、下划线）">
             <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="cc.oofo.easytranslate.actions.QuickTranslateAction"/>
             <keyboard-shortcut keymap="$default" first-keystroke="alt shift T"/>
+        </action>
+
+        <action id="cc.oofo.easytranslate.actions.VariableNameAction"
+                class="cc.oofo.easytranslate.actions.VariableNameAction"
+                text="变量命名建议"
+                description="根据中文生成变量命名建议">
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="cc.oofo.easytranslate.actions.TextTransformAction"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt shift V"/>
         </action>
     </actions>
 </idea-plugin> 

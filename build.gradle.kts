@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "cc.oofo"
-version = "1.0.0"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
@@ -59,8 +59,8 @@ tasks {
     }
 
     patchPluginXml {
-        sinceBuild.set("232")
-        untilBuild.set("233.*")
+        sinceBuild.set("233")
+        untilBuild.set("")
         pluginDescription.set("""
             一个简单易用的翻译插件，支持多种翻译引擎：
             <ul>
@@ -74,6 +74,7 @@ tasks {
                 <li>快速翻译选中的文本</li>
                 <li>支持自定义词典</li>
                 <li>支持多种文本转换功能（大小写转换、驼峰转换等）</li>
+                <li>支持中文变量命名建议</li>
             </ul>
             
             使用方法：
@@ -98,6 +99,13 @@ tasks {
         """)
         changeNotes.set("""
             <ul>
+                <li>1.0.1
+                    <ul>
+                        <li>新增变量命名建议功能（Alt + Shift + V）</li>
+                        <li>扩展 IDE 兼容性支持（233+）</li>
+                        <li>优化用户界面体验</li>
+                    </ul>
+                </li>
                 <li>1.0.0
                     <ul>
                         <li>支持百度翻译、有道翻译和谷歌翻译</li>
