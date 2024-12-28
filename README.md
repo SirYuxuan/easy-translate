@@ -1,36 +1,38 @@
 # Easy Translate Plugin
 
-一个简单易用的 IntelliJ IDEA 翻译插件，支持多种翻译引擎和自定义词典功能。
+[中文文档](README_CN.md)
 
-## 功能特点
+A user-friendly translation plugin for IntelliJ IDEA that supports multiple translation engines and custom dictionaries.
 
-- 支持多种翻译引擎：
-  - 百度翻译
-  - 有道翻译
-  - 谷歌翻译
+## Features
 
-- 快速翻译：
-  - 选中文本后按快捷键（默认 Alt + T）即可翻译
-  - 自动检测中英文并进行互译
-  - 支持自定义快捷键
+- Multiple Translation Engines:
+  - Baidu Translate
+  - Youdao Translate
+  - Google Translate
 
-- 自定义词典：
-  - 支持添加自定义翻译对照
-  - 可设置是否区分大小写
-  - 可单独启用/禁用词典条目
+- Quick Translation:
+  - Translate selected text with a shortcut (default Alt + T)
+  - Auto-detect Chinese/English and translate accordingly
+  - Customizable keyboard shortcuts
 
-- 文本转换功能：
-  - 大小写转换
-  - 驼峰命名转换
-  - 下划线命名转换
-  - 常量命名转换
+- Custom Dictionary:
+  - Add custom translation mappings
+  - Case-sensitive options
+  - Enable/disable individual dictionary entries
 
-## 安装要求
+- Text Transformation:
+  - Case conversion
+  - Camel case conversion
+  - Snake case conversion
+  - Constant case conversion
 
-- IntelliJ IDEA 2023.2 或更高版本
-- Java 17 或更高版本
+## Requirements
 
-## 支持的 IDE
+- IntelliJ IDEA 2023.2 or higher
+- Java 17 or higher
+
+## Supported IDEs
 
 - IntelliJ IDEA (Community & Ultimate)
 - PyCharm (Community & Professional)
@@ -42,83 +44,83 @@
 - RubyMine
 - Rider
 
-## 安装方法
+## Installation
 
-1. 在 IDE 中打开 Settings/Preferences
-2. 选择 Plugins
-3. 点击 Marketplace
-4. 搜索 "Easy Translate"
-5. 点击 Install 安装
+1. Open Settings/Preferences in your IDE
+2. Select Plugins
+3. Click Marketplace
+4. Search for "Easy Translate"
+5. Click Install
 
-## 使用方法
+## Usage
 
-### 基本翻译
-1. 选中需要翻译的文本
-2. 使用快捷键 Alt + T（可自定义）或右键菜单中的"快速翻译"
-3. 文本将自动翻译并替换选中内容
+### Basic Translation
+1. Select the text you want to translate
+2. Use the shortcut Alt + T (customizable) or right-click menu "Quick Translate"
+3. The text will be automatically translated and replace the selection
 
-### 配置翻译引擎
-1. 打开 Settings/Preferences
-2. 选择 Tools -> 翻译助手
-3. 选择翻译引擎并配置相应的 API 密钥：
-   - 百度翻译：需要 APP ID 和密钥
-   - 有道翻译：需要应用 ID 和密钥
-   - 谷歌翻译：可选配置代理服务器
+### Configure Translation Engine
+1. Open Settings/Preferences
+2. Go to Tools -> Translation Assistant
+3. Select a translation engine and configure API credentials:
+   - Baidu Translate: Requires APP ID and Secret Key
+   - Youdao Translate: Requires App Key and Secret Key
+   - Google Translate: Optional proxy configuration
 
-### 自定义词典
-1. 打开 Settings/Preferences
-2. 选择 Tools -> 翻译助手
-3. 在词典设置中添加、编辑或删除翻译对照
-4. 可以设置是否区分大小写和是否启用
+### Custom Dictionary
+1. Open Settings/Preferences
+2. Go to Tools -> Translation Assistant
+3. Add, edit, or delete translation mappings in the dictionary settings
+4. Configure case sensitivity and enable/disable options
 
-### 文本转换
-1. 选中需要转换的文本
-2. 使用快捷键 Alt + Shift + T 或右键菜单中的"文本转换"
-3. 选择需要的转换方式：
-   - 转大写
-   - 转小写
-   - 首字母大写
-   - 转驼峰
-   - 转下划线
+### Text Transformation
+1. Select the text you want to transform
+2. Use the shortcut Alt + Shift + T or right-click menu "Text Transform"
+3. Choose the transformation type:
+   - UPPERCASE
+   - lowercase
+   - Title Case
+   - camelCase
+   - snake_case
 
-## 开发说明
+## Development
 
-### 环境要求
+### Requirements
 - Java Development Kit (JDK) 17
 - Gradle 8.4
 
-### 构建项目
+### Build
 ```bash
 ./gradlew clean build
 ```
 
-### 运行测试
+### Run Tests
 ```bash
 ./gradlew test
 ```
 
-### 本地调试
+### Debug Locally
 ```bash
 ./gradlew runIde
 ```
 
-## 许可证
+## License
 
-本项目采用 Apache 2.0 许可证。
+This project is licensed under the Apache 2.0 License.
 
-## 贡献指南
+## Contributing
 
-欢迎提交 Issue 和 Pull Request。在提交 PR 之前，请确保：
+Contributions via Issues and Pull Requests are welcome. Before submitting a PR, please ensure:
 
-1. 代码符合项目的编码规范
-2. 添加了必要的测试
-3. 更新了相关文档
-4. 所有测试通过
+1. Code follows project coding standards
+2. Necessary tests are added
+3. Documentation is updated
+4. All tests pass
 
-## 问题反馈
+## Support
 
-如果您在使用过程中遇到任何问题，或有任何建议，请：
+If you encounter any issues or have suggestions:
 
-1. 提交 Issue
-2. 发送邮件至 dev@oofo.cc
-3. 访问项目主页 https://www.oofo.cc 
+1. Submit an Issue
+2. Send email to dev@oofo.cc
+3. Visit project homepage at https://www.oofo.cc 
