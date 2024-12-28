@@ -62,29 +62,29 @@ tasks {
         sinceBuild.set("233")
         untilBuild.set("")
         pluginDescription.set("""
-            一个简单易用的翻译插件，支持多种翻译引擎：
+            A powerful translation plugin for IntelliJ-based IDEs with multiple translation engines:
             <ul>
-                <li>百度翻译</li>
-                <li>有道翻译</li>
-                <li>谷歌翻译</li>
+                <li>Baidu Translate API</li>
+                <li>Youdao Translate API</li>
+                <li>Google Translate API</li>
             </ul>
             
-            主要功能：
+            Key Features:
             <ul>
-                <li>快速翻译选中的文本</li>
-                <li>支持自定义词典</li>
-                <li>支持多种文本转换功能（大小写转换、驼峰转换等）</li>
-                <li>支持中文变量命名建议</li>
+                <li>Quick Translation (Alt + T)</li>
+                <li>Variable Name Suggestions (Alt + Shift + V)</li>
+                <li>Text Case Conversion (Alt + Shift + T)</li>
+                <li>Custom Dictionary Support</li>
             </ul>
             
-            使用方法：
+            Usage:
             <ol>
-                <li>在设置中配置翻译引擎的 API 密钥</li>
-                <li>选中需要翻译的文本</li>
-                <li>使用快捷键或右键菜单进行翻译</li>
+                <li>Configure API credentials in Settings</li>
+                <li>Select text in editor</li>
+                <li>Use shortcut or context menu to translate</li>
             </ol>
             
-            支持的 IDE：
+            Supported IDEs:
             <ul>
                 <li>IntelliJ IDEA (Community & Ultimate)</li>
                 <li>PyCharm (Community & Professional)</li>
@@ -101,16 +101,18 @@ tasks {
             <ul>
                 <li>1.0.1
                     <ul>
-                        <li>新增变量命名建议功能（Alt + Shift + V）</li>
-                        <li>扩展 IDE 兼容性支持（233+）</li>
-                        <li>优化用户界面体验</li>
+                        <li>Added variable name suggestion feature (Alt + Shift + V)</li>
+                        <li>Extended IDE compatibility (233+)</li>
+                        <li>Improved UI/UX experience</li>
+                        <li>Enhanced English documentation</li>
                     </ul>
                 </li>
                 <li>1.0.0
                     <ul>
-                        <li>支持百度翻译、有道翻译和谷歌翻译</li>
-                        <li>支持自定义词典功能</li>
-                        <li>支持文本转换功能</li>
+                        <li>Initial release</li>
+                        <li>Support for Baidu, Youdao, and Google translation</li>
+                        <li>Custom dictionary feature</li>
+                        <li>Text transformation tools</li>
                     </ul>
                 </li>
             </ul>

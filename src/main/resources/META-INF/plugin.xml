@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <idea-plugin>
     <id>cc.oofo.easy-translate</id>
-    <name>翻译助手</name>
+    <name>Easy Translate</name>
     <vendor email="dev@oofo.cc" url="https://www.oofo.cc">Yuxuan</vendor>
 
     <description><![CDATA[
-    一个简单易用的翻译插件，支持中英互译。
+    A powerful translation plugin for IntelliJ-based IDEs.
     
-    功能特点：
-    - 选中文本后按快捷键（默认 Alt + T）即可翻译
-    - 自动检测中英文并进行互译
-    - 支持自定义快捷键
-    - 支持多个翻译引擎（百度、有道、谷歌）
-    - 支持自定义翻译词典
-    - 支持中文变量命名建议（Alt + Shift + V）
-    - 支持多种文本转换功能（Alt + Shift + T）
+    Features:
+    - Quick translation with shortcut (Alt + T)
+    - Auto-detect language and translate
+    - Multiple translation engines (Baidu, Youdao, Google)
+    - Custom dictionary support
+    - Variable name suggestions (Alt + Shift + V)
+    - Text case conversion (Alt + Shift + T)
     ]]></description>
 
     <!-- Product and plugin compatibility requirements -->
@@ -30,31 +29,31 @@
                 parentId="tools"
                 instance="cc.oofo.easytranslate.settings.TranslateSettingsConfigurable"
                 id="cc.oofo.easytranslate.settings.TranslateSettingsConfigurable"
-                displayName="翻译助手"/>
+                displayName="Easy Translate"/>
     </extensions>
 
     <!-- Actions defined by the plugin -->
     <actions>
         <action id="cc.oofo.easytranslate.actions.QuickTranslateAction"
                 class="cc.oofo.easytranslate.actions.QuickTranslateAction"
-                text="快速翻译"
-                description="快速翻译选中的文本（中英互译）">
+                text="Quick Translate"
+                description="Quickly translate selected text">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
             <keyboard-shortcut keymap="$default" first-keystroke="alt T"/>
         </action>
 
         <action id="cc.oofo.easytranslate.actions.TextTransformAction"
                 class="cc.oofo.easytranslate.actions.TextTransformAction"
-                text="文本转换"
-                description="转换文本格式（大写、小写、驼峰、下划线）">
+                text="Text Transform"
+                description="Transform text case (uppercase, lowercase, camel case, etc.)">
             <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="cc.oofo.easytranslate.actions.QuickTranslateAction"/>
             <keyboard-shortcut keymap="$default" first-keystroke="alt shift T"/>
         </action>
 
         <action id="cc.oofo.easytranslate.actions.VariableNameAction"
                 class="cc.oofo.easytranslate.actions.VariableNameAction"
-                text="变量命名建议"
-                description="根据中文生成变量命名建议">
+                text="Variable Name Suggestions"
+                description="Generate variable name suggestions from text">
             <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="cc.oofo.easytranslate.actions.TextTransformAction"/>
             <keyboard-shortcut keymap="$default" first-keystroke="alt shift V"/>
         </action>
