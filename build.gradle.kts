@@ -99,6 +99,13 @@ tasks {
         """)
         changeNotes.set("""
             <ul>
+                <li>1.0.2
+                    <ul>
+                        <li>Improved plugin description</li>
+                        <li>Enhanced documentation</li>
+                        <li>Added support for future IDE versions</li>
+                    </ul>
+                </li>
                 <li>1.0.1
                     <ul>
                         <li>Added variable name suggestion feature (Alt + Shift + V)</li>
