@@ -33,6 +33,11 @@ jobs:
           VERSION=$(grep 'version = ' build.gradle.kts | cut -d'"' -f2)
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
+      - name: Delete existing tag if exists
+        run: |
+          TAG_NAME="v${{ steps.get_version.outputs.version }}"
+          git push origin :refs/tags/$TAG_NAME || true
+
       - name: Build Plugin
         run: ./gradlew buildPlugin
         env:
@@ -49,5 +54,22 @@ jobs:
           draft: false
           prerelease: false
           generate_release_notes: true
+          body: |
+            🔄 This release replaces the previous version with the same number.
+            
+            ### Changes in this update:
+            - Updated plugin build
+            - Refreshed release assets
+          
+          # 允许覆盖已存在的 release
+          replace_artifacts_if_exist: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish Plugin
+        run: ./gradlew publishPlugin
+        env:
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          PRIVATE_KEY_PASSWORD: ${{ secrets.PRIVATE_KEY_PASSWORD }}
+          CERTIFICATE_CHAIN: ${{ secrets.CERTIFICATE_CHAIN }}
+          PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }} 
