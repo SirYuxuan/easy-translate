@@ -25,11 +25,18 @@ jobs:
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
 
-      - name: Get Version
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Get Version from Tag
         id: get_version
         run: |
           VERSION=${GITHUB_REF#refs/tags/v}
           echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Update Version in build.gradle.kts
+        run: |
+          sed -i "s/version = \".*\"/version = \"${{ steps.get_version.outputs.version }}\"/" build.gradle.kts
 
       - name: Build Plugin
         run: ./gradlew buildPlugin
@@ -49,8 +56,11 @@ jobs:
           generate_release_notes: true
           body: |
             ### Changes in this release:
-            - Updated plugin build
-            - Refreshed release assets
+            - Initial release of Easy Translate Plugin
+            - Support for multiple translation engines (Baidu, Youdao, Google)
+            - Custom dictionary feature
+            - Variable name suggestions
+            - Text case conversion tools
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
