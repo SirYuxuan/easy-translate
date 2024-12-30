@@ -106,7 +106,7 @@ A user-friendly translation plugin for IntelliJ IDEA that supports multiple tran
 
 ## License
 
-This project is licensed under the Apache 2.0 License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contributing
 
