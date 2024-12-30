@@ -1,14 +1,12 @@
 name: Release Plugin
 
 on:
-  pull_request:
-    types: [closed]
-    branches:
-      - main
+  push:
+    tags:
+      - 'v*'  # 当推送以 v 开头的 tag 时触发
 
 jobs:
   release:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -30,13 +28,8 @@ jobs:
       - name: Get Version
         id: get_version
         run: |
-          VERSION=$(grep 'version = ' build.gradle.kts | cut -d'"' -f2)
+          VERSION=${GITHUB_REF#refs/tags/v}
           echo "version=$VERSION" >> $GITHUB_OUTPUT
-
-      - name: Delete existing tag if exists
-        run: |
-          TAG_NAME="v${{ steps.get_version.outputs.version }}"
-          git push origin :refs/tags/$TAG_NAME || true
 
       - name: Build Plugin
         run: ./gradlew buildPlugin
@@ -48,21 +41,16 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: v${{ steps.get_version.outputs.version }}
-          name: Release v${{ steps.get_version.outputs.version }}
+          tag_name: ${{ github.ref }}
+          name: Release ${{ github.ref_name }}
           files: build/distributions/easy-translate-${{ steps.get_version.outputs.version }}.zip
           draft: false
           prerelease: false
           generate_release_notes: true
           body: |
-            🔄 This release replaces the previous version with the same number.
-            
-            ### Changes in this update:
+            ### Changes in this release:
             - Updated plugin build
             - Refreshed release assets
-          
-          # 允许覆盖已存在的 release
-          replace_artifacts_if_exist: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
