@@ -5,7 +5,7 @@
     <vendor email="dev@oofo.cc" url="https://www.oofo.cc">Yuxuan</vendor>
 
     <description><![CDATA[
-    A powerful translation plugin for IntelliJ-based IDEs.
+    A powerful translation plugin for IntelliJ-based IDEs with multiple translation engines.
     
     Features:
     - Quick translation with shortcut (Alt + T)
@@ -15,6 +15,13 @@
     - Variable name suggestions (Alt + Shift + V)
     - Text case conversion (Alt + Shift + T)
     
+    使用说明：
+    - 快速翻译快捷键 (Alt + T)
+    - 自动检测语言并翻译
+    - 支持多种翻译引擎（百度、有道、谷歌）
+    - 自定义词典功能
+    - 变量命名建议 (Alt + Shift + V)
+    - 文本大小写转换 (Alt + Shift + T)
     ]]></description>
 
     <!-- Product and plugin compatibility requirements -->

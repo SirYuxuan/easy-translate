@@ -98,6 +98,7 @@ tasks {
             </ul>
         """)
         changeNotes.set("""
+            Release Notes:
             <ul>
                 <li>1.0.2
                     <ul>
@@ -120,6 +121,33 @@ tasks {
                         <li>Support for Baidu, Youdao, and Google translation</li>
                         <li>Custom dictionary feature</li>
                         <li>Text transformation tools</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            更新日志：
+            <ul>
+                <li>1.0.2
+                    <ul>
+                        <li>改进插件描述</li>
+                        <li>增强文档说明</li>
+                        <li>添加对未来 IDE 版本的支持</li>
+                    </ul>
+                </li>
+                <li>1.0.1
+                    <ul>
+                        <li>添加变量命名建议功能 (Alt + Shift + V)</li>
+                        <li>扩展 IDE 兼容性 (233+)</li>
+                        <li>改进用户界面和体验</li>
+                        <li>增强英文文档</li>
+                    </ul>
+                </li>
+                <li>1.0.0
+                    <ul>
+                        <li>首次发布</li>
+                        <li>支持百度、有道和谷歌翻译</li>
+                        <li>自定义词典功能</li>
+                        <li>文本转换工具</li>
                     </ul>
                 </li>
             </ul>
